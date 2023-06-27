@@ -17,6 +17,23 @@
     <% end %>
   </div>
 
+    <div>
+  <label for="user_password">Password</label><br>
+  <input type="password" name="user[password]" id="user_password" placeholder="Password"><br>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+</div>
+
+<div>
+  <label for="user_password_confirmation">Password Confirmation</label><br>
+  <input type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="Password Confirmation"><br>
+  <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+</div>
+
+
   <div>
     <%= form.button "Clear", type: "reset" %>
     <%= form.submit%>
